@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -37,4 +39,4 @@ app.get('/indirecthelp', (req, res) => {
 	res.sendFile(__dirname + '/public/help.html');
 });
 
-app.listen(3000, () => {console.log('Server started');});
+app.listen(port, () => {console.log(`Server up on port ${port}`);});
